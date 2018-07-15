@@ -1,0 +1,35 @@
+@media (max-width: 375px) {
+  #main-header {
+    font-family: Oswald, sans-serif;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center; }
+  .subreddits {
+    font-family: Oswald, sans-serif;
+    font-size: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center; }
+  .subreddit-class {
+    padding: 20px; }
+  .content {
+    border: solid 0.5px;
+    height: 362px;
+    width: 340px;
+    margin: 9px;
+    font-family: Oswald, sans-serif;
+    font-size: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 10px; }
+  .stats {
+    font-family: Lato, sans-serif;
+    font-size: 12px; }
+  .text-body {
+    font-family: Lato, sans-serif;
+    font-size: 14px; } }

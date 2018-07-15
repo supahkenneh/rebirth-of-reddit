@@ -1,0 +1,60 @@
+$oswald: Oswald, sans-serif;
+$lato: Lato, sans-serif;
+
+@media (max-width: 375px){
+
+body {
+  // background-image: url('../assets/bg.jpg');
+}
+
+#main-header {
+  font-family: $oswald;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  // background-image: url('../assets/header_bg.svg')
+}
+
+.subreddits {
+  font-family: $oswald;
+  font-size: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+
+.subreddit-class {
+  padding: 20px;
+}
+
+.content {
+  border: solid 0.5px;
+  height: 362px;
+  width: 340px;
+  margin: 9px; 
+  font-family: $oswald;
+  font-size: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.stats {
+  font-family: $lato;
+  font-size: 12px;
+}
+
+.text-body {
+  font-family: $lato;
+  font-size: 14px;
+}
+
+}
+
+
+
