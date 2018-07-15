@@ -3,10 +3,6 @@ $lato: Lato, sans-serif;
 
 @media (max-width: 375px){
 
-body {
-  // background-image: url('../assets/bg.jpg');
-}
-
 #main-header {
   font-family: $oswald;
   font-size: 30px;
@@ -14,7 +10,6 @@ body {
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  // background-image: url('../assets/header_bg.svg')
 }
 
 .subreddits {
@@ -31,17 +26,32 @@ body {
   padding: 20px;
 }
 
-.content {
+.posts {
   border: solid 0.5px;
   height: 362px;
   width: 340px;
   margin: 9px; 
-  font-family: $oswald;
-  font-size: 20px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   padding: 10px;
+  align-content: center;
+}
+
+.picture {
+  border: 1px solid;
+  height: 200px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: $oswald;
+  font-size: 30px;
+}
+
+.title {
+  font-family: $oswald;
+  font-size: 16px;
 }
 
 .stats {
@@ -53,6 +63,7 @@ body {
   font-family: $lato;
   font-size: 14px;
 }
+
 
 }
 
