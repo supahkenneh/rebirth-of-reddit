@@ -115,3 +115,66 @@ function showDadJokes(){
     }
   }
 }
+
+const showerButton = document.getElementById('subreddit-three');
+showerButton.addEventListener('click', showThoughts);
+
+function showThoughts () {
+    
+  getContentDiv.innerHTML = '';
+  
+  const getThoughts = new XMLHttpRequest();
+  getThoughts.addEventListener('load', showerThoughtsSubreddit);
+  getThoughts.open('GET', 'https://www.reddit.com/r/Showerthoughts/.json');
+  getThoughts.send();
+
+  function showerThoughtsSubreddit(){
+    const parsedThoughts = JSON.parse(this.responseText);
+
+    const thoughtPosts = parsedThoughts.data.children;
+
+    for (let i = 0; i < thoughtPosts.length; i++){
+
+      let postDiv = document.createElement('div');
+      postDiv.className = 'posts';
+      getContentDiv.appendChild(postDiv);
+
+      //get picture
+
+      // let pictureDiv = document.createElement('div');
+      // pictureDiv.className = 'picture';
+      // if (thoughtPosts[i].data.thumbnail === 'nsfw') {
+      //   pictureDiv.innerHTML = 'NSFW';
+      // }
+      // pictureDiv.style.backgroundImage = 'url("' + thoughtPosts[i].data.thumbnail + '")'
+      // postDiv.appendChild(pictureDiv);
+
+      //get title
+      let titleDiv = document.createElement('div'); titleDiv.className = 'title';
+      titleDiv.innerHTML = thoughtPosts[i].data.title;
+      postDiv.appendChild(titleDiv);
+
+      //get post stats
+      let redditor = document.createElement('p');
+      redditor.className = 'stats';
+      redditor.innerHTML = 'by ' + thoughtPosts[i].data.author + ' • ' + 'Upvotes ' + thoughtPosts[i].data.score + ' • ' + thoughtPosts[i].data.num_comments + ' comments';
+      postDiv.appendChild(redditor);
+
+
+      //get post text
+      let textBody = document.createElement('div');
+      textBody.className = 'text-body';
+      textBody.innerHTML = thoughtPosts[i].data.selftext;
+      postDiv.appendChild(textBody);
+
+    }
+  }
+}
+
+
+
+//CUT OFF TEXT FOR SHOWERTHOUGHTS
+//GET RANDOM SUBREDDITS
+//ADD BUTTON ON TOP RIGHT
+//MAKE FOOTER
+//DESKTOP VERSION

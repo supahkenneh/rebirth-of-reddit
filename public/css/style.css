@@ -29,6 +29,8 @@
     margin-top: 50px; }
   .subreddit-class {
     padding: 10px; }
+  #subreddit-two, #subreddit-three {
+    border: 1px solid gray; }
   .posts {
     border: solid 0.5px;
     height: 362px;
