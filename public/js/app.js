@@ -33,10 +33,12 @@ function showCity() {
 
       let pictureDiv = document.createElement('div');
       pictureDiv.className = 'picture';
-      if (cityPosts[i].data.url.split('').reverse().join('').charAt(0) !== 'g') {
-        pictureDiv.style.backgroundImage = 'url("https://b.thumbs.redditmedia.com/1A0mtan1uVG3Om-BfkpU_Fie3FuZ20ZmUawhNOo4x0c.jpg")'
-      } else {
+      if (cityPosts[i].data.url.charAt(cityPosts[i].data.url.length - 1) === 'g') {
         pictureDiv.style.backgroundImage = 'url("' + cityPosts[i].data.url + '")'
+      } else if (cityPosts[i].data.url.charAt(cityPosts[i].data.url.length - 1) !== 'g' && cityPosts[i].data.thumbnail.charAt(cityPosts[i].data.thumbnail.length - 1) === 'g') {
+        pictureDiv.style.backgroundImage = 'url("' + cityPosts[i].data.thumbnail + '")';
+      } else {
+        pictureDiv.style.backgroundImage = 'url("https://b.thumbs.redditmedia.com/1A0mtan1uVG3Om-BfkpU_Fie3FuZ20ZmUawhNOo4x0c.jpg")'
       }
       postDiv.appendChild(pictureDiv);
 
@@ -89,10 +91,12 @@ function showSky() {
       //get picture
       let pictureDiv = document.createElement('div');
       pictureDiv.className = 'picture';
-      if (skyPosts[i].data.url.split('').reverse().join('').charAt(0) !== 'g') {
-        pictureDiv.style.backgroundImage = 'url("https://b.thumbs.redditmedia.com/1A0mtan1uVG3Om-BfkpU_Fie3FuZ20ZmUawhNOo4x0c.jpg")'
-      } else {
+      if (skyPosts[i].data.url.charAt(skyPosts[i].data.url.length - 1) === 'g') {
         pictureDiv.style.backgroundImage = 'url("' + skyPosts[i].data.url + '")'
+      } else if (skyPosts[i].data.url.charAt(skyPosts[i].data.url.length - 1) !== 'g' && skyPosts[i].data.thumbnail.charAt(skyPosts[i].data.thumbnail.length - 1) === 'g') {
+        pictureDiv.style.backgroundImage = 'url("' + skyPosts[i].data.thumbnail + '")';
+      } else {
+        pictureDiv.style.backgroundImage = 'url("https://b.thumbs.redditmedia.com/1A0mtan1uVG3Om-BfkpU_Fie3FuZ20ZmUawhNOo4x0c.jpg")'
       }
       postDiv.appendChild(pictureDiv);
 
@@ -144,10 +148,12 @@ function showMeirl() {
       //get picture
       let pictureDiv = document.createElement('div');
       pictureDiv.className = 'picture';
-      if (meirlPosts[i].data.url.split('').reverse().join('').charAt(0) !== 'g') {
-        pictureDiv.style.backgroundImage = 'url("https://b.thumbs.redditmedia.com/1A0mtan1uVG3Om-BfkpU_Fie3FuZ20ZmUawhNOo4x0c.jpg")'
-      } else {
+      if (meirlPosts[i].data.url.charAt(meirlPosts[i].data.url.length - 1) === 'g') {
         pictureDiv.style.backgroundImage = 'url("' + meirlPosts[i].data.url + '")'
+      } else if (meirlPosts[i].data.url.charAt(meirlPosts[i].data.url.length - 1) !== 'g' && mmeirlPosts[i].data.thumbnail.charAt(meirlPosts[i].data.thumbnail.length - 1) === 'g') {
+        pictureDiv.style.backgroundImage = 'url("' + meirlPosts[i].data.thumbnail + '")';
+      } else {
+        pictureDiv.style.backgroundImage = 'url("https://b.thumbs.redditmedia.com/1A0mtan1uVG3Om-BfkpU_Fie3FuZ20ZmUawhNOo4x0c.jpg")'
       }
       postDiv.appendChild(pictureDiv);
 
@@ -172,9 +178,71 @@ function showMeirl() {
   }
 }
 
+const randomSubreddits = ['https://www.reddit.com/r/AskReddit/.json', 'https://www.reddit.com/r/Showerthoughts/.json', 'https://www.reddit.com/r/movies/.json', 'https://www.reddit.com/r/OldSchoolCool/.json', 'https://www.reddit.com/r/mildlyinfuriating/.json', 'https://www.reddit.com/r/youseeingthisshit/.json', 'https://www.reddit.com/r/Damnthatsinteresting/.json'];
+
+const randomButton = document.getElementById('subreddit-four');
+randomButton.addEventListener('click', showRandomSubreddit);
+
+function showRandomSubreddit() {
+  let randomize = randomSubreddits[Math.floor(Math.random() * randomSubreddits.length)];
+  console.log(randomize);
+
+  getContentDiv.innerHTML = '';
+
+  const getRandom = new XMLHttpRequest();
+  getRandom.addEventListener('load', randomSubreddit);
+  getRandom.open('GET', randomize);
+  getRandom.send();
+
+  function randomSubreddit() {
+    const parsedRandom = JSON.parse(this.responseText);
+
+    const randomPosts = parsedRandom.data.children;
+
+    console.log(randomPosts);
+
+    for (let i = 0; i < randomPosts.length; i++) {
+
+      let postDiv = document.createElement('div');
+      postDiv.className = 'posts';
+      getContentDiv.appendChild(postDiv);
+
+      //get picture
+      let pictureDiv = document.createElement('div');
+      pictureDiv.className = 'picture';
+      if (randomPosts[i].data.url.charAt(randomPosts[i].data.url.length - 1) === 'g') {
+        pictureDiv.style.backgroundImage = 'url("' + randomPosts[i].data.url + '")'
+      } else if (randomPosts[i].data.url.charAt(randomPosts[i].data.url.length - 1) !== 'g' && randomPosts[i].data.thumbnail.charAt(randomPosts[i].data.thumbnail.length - 1) === 'g') {
+        pictureDiv.style.backgroundImage = 'url("' + randomPosts[i].data.thumbnail + '")';
+      } else {
+        pictureDiv.style.backgroundImage = 'url("https://b.thumbs.redditmedia.com/1A0mtan1uVG3Om-BfkpU_Fie3FuZ20ZmUawhNOo4x0c.jpg")'
+      }
+      postDiv.appendChild(pictureDiv);
+
+      //get title
+      let titleDiv = document.createElement('div'); titleDiv.className = 'title';
+      titleDiv.innerHTML = randomPosts[i].data.title;
+      postDiv.appendChild(titleDiv);
+
+      //get post stats
+      let redditor = document.createElement('p');
+      redditor.className = 'stats';
+      redditor.innerHTML = 'by ' + randomPosts[i].data.author + ' • ' + 'Score ' + randomPosts[i].data.score + ' • ' + randomPosts[i].data.num_comments + ' comments';
+      postDiv.appendChild(redditor);
+
+      //get post text
+      let textBody = document.createElement('div');
+      textBody.className = 'text-body';
+      textBody.innerHTML = randomPosts[i].data.selftext;
+      postDiv.appendChild(textBody);
+    }
+  }
+}
+
 
 
 //GET RANDOM SUBREDDITS
+//TIME STAMP
 //ADD BUTTON ON TOP RIGHT
 //CREATE FUNCTIONS?
 //DESKTOP VERSION
