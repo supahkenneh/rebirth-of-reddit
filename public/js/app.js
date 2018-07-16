@@ -48,7 +48,7 @@ function showCity() {
       //get post stats
       let redditor = document.createElement('p');
       redditor.className = 'stats';
-      redditor.innerHTML = 'by ' + cityPosts[i].data.author + ' • ' + 'Upvotes ' + cityPosts[i].data.score + ' • ' + cityPosts[i].data.num_comments + ' comments';
+      redditor.innerHTML = 'by ' + cityPosts[i].data.author + ' • ' + 'Score ' + cityPosts[i].data.score + ' • ' + cityPosts[i].data.num_comments + ' comments';
       postDiv.appendChild(redditor);
 
 
@@ -61,26 +61,26 @@ function showCity() {
   }
 }
 
-const dadButton = document.getElementById('subreddit-two');
-dadButton.addEventListener('click', showDadJokes);
+const skyButton = document.getElementById('subreddit-two');
+skyButton.addEventListener('click', showSky);
 
-function showDadJokes() {
+function showSky() {
 
   getContentDiv.innerHTML = '';
 
-  const getDadJokes = new XMLHttpRequest();
-  getDadJokes.addEventListener('load', dadJokesSubreddit);
-  getDadJokes.open('GET', 'https://www.reddit.com/r/dadjokes/.json');
-  getDadJokes.send();
+  const getSky = new XMLHttpRequest();
+  getSky.addEventListener('load', skyPornSubreddit);
+  getSky.open('GET', 'https://www.reddit.com/r/SkyPorn/.json');
+  getSky.send();
 
-  function dadJokesSubreddit() {
-    const parsedDads = JSON.parse(this.responseText);
+  function skyPornSubreddit() {
+    const parsedSky = JSON.parse(this.responseText);
 
-    const dadPosts = parsedDads.data.children;
+    const skyPosts = parsedSky.data.children;
 
-    console.log(parsedDads);
+    console.log(parsedSky);
 
-    for (let i = 0; i < dadPosts.length; i++) {
+    for (let i = 0; i < skyPosts.length; i++) {
 
       let postDiv = document.createElement('div');
       postDiv.className = 'posts';
@@ -89,28 +89,28 @@ function showDadJokes() {
       //get picture
       let pictureDiv = document.createElement('div');
       pictureDiv.className = 'picture';
-      if (dadPosts[i].data.url.split('').reverse().join('').charAt(0) !== 'g') {
-        pictureDiv.style.backgroundImage = 'url("http://theonyxpath.com/wp-content/uploads/2014/12/snoo.png")'
+      if (skyPosts[i].data.url.split('').reverse().join('').charAt(0) !== 'g') {
+        pictureDiv.style.backgroundImage = 'url("https://b.thumbs.redditmedia.com/1A0mtan1uVG3Om-BfkpU_Fie3FuZ20ZmUawhNOo4x0c.jpg")'
       } else {
-        pictureDiv.style.backgroundImage = 'url("' + dadPosts[i].data.url + '")'
+        pictureDiv.style.backgroundImage = 'url("' + skyPosts[i].data.url + '")'
       }
       postDiv.appendChild(pictureDiv);
 
       //get title
       let titleDiv = document.createElement('div'); titleDiv.className = 'title';
-      titleDiv.innerHTML = dadPosts[i].data.title;
+      titleDiv.innerHTML = skyPosts[i].data.title;
       postDiv.appendChild(titleDiv);
 
       //get post stats
       let redditor = document.createElement('p');
       redditor.className = 'stats';
-      redditor.innerHTML = 'by ' + dadPosts[i].data.author + ' • ' + 'Upvotes ' + dadPosts[i].data.score + ' • ' + dadPosts[i].data.num_comments + ' comments';
+      redditor.innerHTML = 'by ' + skyPosts[i].data.author + ' • ' + 'Score ' + skyPosts[i].data.score + ' • ' + skyPosts[i].data.num_comments + ' comments';
       postDiv.appendChild(redditor);
 
       //get post text
       let textBody = document.createElement('div');
       textBody.className = 'text-body';
-      textBody.innerHTML = dadPosts[i].data.selftext;
+      textBody.innerHTML = skyPosts[i].data.selftext;
       postDiv.appendChild(textBody);
     }
   }
@@ -159,7 +159,7 @@ function showMeirl() {
       //get post stats
       let redditor = document.createElement('p');
       redditor.className = 'stats';
-      redditor.innerHTML = 'by ' + meirlPosts[i].data.author + ' • ' + 'Upvotes ' + meirlPosts[i].data.score + ' • ' + meirlPosts[i].data.num_comments + ' comments';
+      redditor.innerHTML = 'by ' + meirlPosts[i].data.author + ' • ' + 'Score ' + meirlPosts[i].data.score + ' • ' + meirlPosts[i].data.num_comments + ' comments';
       postDiv.appendChild(redditor);
 
 
@@ -167,9 +167,6 @@ function showMeirl() {
       let textBody = document.createElement('div');
       textBody.className = 'text-body';
       textBody.innerHTML = meirlPosts[i].data.selftext;
-      if (textBody.innerHTML.length > 250) {
-        textBody.innerHTML = textBody.innerHTML.substr(0, 200) + '...';
-      }
       postDiv.appendChild(textBody);
     }
   }
@@ -177,8 +174,8 @@ function showMeirl() {
 
 
 
-//CUT OFF TEXT FOR SHOWERTHOUGHTS
 //GET RANDOM SUBREDDITS
 //ADD BUTTON ON TOP RIGHT
-//MAKE FOOTER
+//CREATE FUNCTIONS?
 //DESKTOP VERSION
+//MAKE FOOTER
