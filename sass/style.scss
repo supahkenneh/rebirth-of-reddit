@@ -49,6 +49,10 @@ body {
   border: 1px solid gray;
 }
 
+#filler {
+  height: 100px;
+}
+
 
 .posts {
   border: solid 0.5px;
@@ -66,9 +70,9 @@ body {
 }
 
 .picture {
-  border: 1px solid;
   height: 250px;
   width: 350px;
+  background-size: 350px 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -89,6 +93,7 @@ body {
 .text-body {
   font-family: $lato;
   font-size: 14px;
+  height: 3.6em;
 }
 
 
