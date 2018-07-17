@@ -1,22 +1,20 @@
-console.log('test •');
-console.log(moment().format('LLLL'));
-
 //append content here
 let getContentDiv = document.getElementById('body_div');
 
-const randomSubreddits = ['AskReddit', 'Showerthoughts', 'movies', 'OldSchoolCool', 'mildlyinfuriating', 'youseeingthisshit', 'Damnthatsinteresting', 'dadjokes'];
+const randomSubreddits = ['AskReddit', 'Showerthoughts', 'movies', 'OldSchoolCool', 'mildlyinfuriating', 'youseeingthisshit', 'Damnthatsinteresting', 'dadjokes', 'nosleep'];
+
 
 function showSubreddit(subreddit) {
-  
-  return function (){
-  
+
+  return function () {
+
     const request = new XMLHttpRequest();
     request.addEventListener('load', createPosts);
     request.open('GET', `https://www.reddit.com/r/${subreddit}/.json`);
     request.send();
 
   }
-}
+};
 
 function createPosts() {
   const parsedData = JSON.parse(this.responseText);
@@ -30,33 +28,37 @@ function createPosts() {
 
     let postDiv = document.createElement('div');
     postDiv.className = 'posts';
-    
+
     //get picture
-    
+
     let pictureDiv = document.createElement('div');
     pictureDiv.className = 'picture';
+
     if (subredditInfo[i].data.url.charAt(subredditInfo[i].data.url.length - 1) === 'g') {
       pictureDiv.style.backgroundImage = 'url("' + subredditInfo[i].data.url + '")'
-    } else if (subredditInfo[i].data.url.charAt(subredditInfo[i].data.url.length - 1) !== 'g' && subredditInfo[i].data.thumbnail.charAt(subredditInfo[i].data.thumbnail.length - 1) === 'g') {
+    } 
+    else if (subredditInfo[i].data.url.charAt(subredditInfo[i].data.url.length - 1) !== 'g' && subredditInfo[i].data.thumbnail.charAt(subredditInfo[i].data.thumbnail.length - 1) === 'g') {
       pictureDiv.style.backgroundImage = 'url("' + subredditInfo[i].data.thumbnail + '")';
-    } else {
+    } 
+    else {
       pictureDiv.style.backgroundImage = 'url("https://b.thumbs.redditmedia.com/1A0mtan1uVG3Om-BfkpU_Fie3FuZ20ZmUawhNOo4x0c.jpg")'
-    }
+    };
+
     postDiv.appendChild(pictureDiv);
-    
+
     //get title
     let titleDiv = document.createElement('div'); titleDiv.className = 'title';
     titleDiv.innerHTML = subredditInfo[i].data.title;
     postDiv.appendChild(titleDiv);
-    
+
     //get post stats
     let redditor = document.createElement('p');
     redditor.className = 'stats';
-    redditor.innerHTML = 'by ' + subredditInfo[i].data.author + ' • ' + 'Score ' + subredditInfo[i].data.score + ' • ' + 
-    subredditInfo[i].data.num_comments + ' comments';
+    redditor.innerHTML = 'by ' + subredditInfo[i].data.author + ' • ' + 'Score ' + subredditInfo[i].data.score + ' • ' +
+      subredditInfo[i].data.num_comments + ' comments';
     postDiv.appendChild(redditor);
-    
-    
+
+
     //get post text
     let textBody = document.createElement('div');
     textBody.className = 'text_body';
@@ -65,7 +67,7 @@ function createPosts() {
 
     getContentDiv.appendChild(postDiv);
   }
-}
+};
 
 
 //cityporn subreddit
@@ -84,6 +86,7 @@ const randomButton = document.getElementById('subreddit-four');
 randomButton.addEventListener('click', showRandomSubreddit);
 
 function showRandomSubreddit() {
+
   let randomize = randomSubreddits[Math.floor(Math.random() * randomSubreddits.length)];
 
   getContentDiv.innerHTML = '';
@@ -94,6 +97,14 @@ function showRandomSubreddit() {
   getRandom.send();
 }
 
+// function truncate(string, limit, after){
+//   if (!string || !limit) return;
+
+//   let content = string.textBody.innerHTML.trim();
+//   content = content.split(' ').slice(0, limit);
+//   content.join
+
+// }
+
 //TIME STAMP
-//DESKTOP VERSION
 //WORD WRAP ISSUES

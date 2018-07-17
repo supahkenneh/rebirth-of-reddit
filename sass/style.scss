@@ -81,7 +81,6 @@ body {
 }
 
 .posts {
-  box-shadow: 0.5px 0.5px 0.5px 0.5px black;
   height: 362px;
   width: 340px;
   display: flex;
@@ -102,19 +101,19 @@ body {
 
 .title {
   font-family: $oswald;
-  font-size: 24px;
+  font-size: 22px;
   height: 40px;
   width: 340px;
   padding: -5px;
   margin-left: 12px;
   overflow: hidden;
-  white-space: nowrap;
+  word-wrap: break-word;
   text-overflow: ellipsis;
 }
 
 .stats {
   font-family: $lato;
-  font-size: 12px;
+  font-size: 14px;
   height: 10px;
   width: 340px;
   margin: 0px;
@@ -124,13 +123,15 @@ body {
 
 .text_body {
   font-family: $lato;
-  height: 50px;
+  height: 80px;
   width: 340px;
-  overflow: hidden;
-  white-space: wrap;
-  text-overflow: ellipsis;
-  font-size: 14px;
+  font-size: 16px;
   margin-left: 12px;
+  margin-top: 7px;
+  overflow: hidden;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  text-overflow: ellipsis;
 }
 
 .footer {
@@ -206,7 +207,6 @@ body {
   background-size: 350px 250px;
   margin: 5px;
   margin-top: 10px;
-  border: 0.5px solid;
 }
 
 .title {
