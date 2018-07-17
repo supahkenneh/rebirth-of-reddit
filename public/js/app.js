@@ -96,4 +96,3 @@ function showRandomSubreddit() {
 
 //TIME STAMP
 //DESKTOP VERSION
-//CREATE FUNCTIONS?
