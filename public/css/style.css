@@ -1,6 +1,13 @@
 @media (max-width: 375px) {
   body {
     background-image: url("https://github.com/supahkenneh/rebirth-of-reddit/blob/master/assets/bg.jpg?raw=true"); }
+  #add {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 10px; }
+  .icon {
+    border: solid 1px red; }
   #main-header {
     font-family: Oswald, sans-serif;
     font-size: 30px;
