@@ -1,7 +1,7 @@
 //append content here
 let getContentDiv = document.getElementById('body_div');
 
-const randomSubreddits = ['AskReddit', 'Showerthoughts', 'movies', 'OldSchoolCool', 'mildlyinfuriating', 'youseeingthisshit', 'Damnthatsinteresting', 'dadjokes', 'nosleep'];
+const randomSubreddits = ['AskReddit', 'Showerthoughts', 'shittyfoodporn', 'OldSchoolCool', 'greentext', 'dadjokes', 'nosleep', 'adviceanimals', 'birdswitharms'];
 
 
 function showSubreddit(subreddit) {
@@ -78,8 +78,9 @@ cityButton.addEventListener('click', showSubreddit('cityporn'));
 const skyButton = document.getElementById('subreddit-two');
 skyButton.addEventListener('click', showSubreddit('skyporn'));;
 
-const meIrlButton = document.getElementById('subreddit-three');
-meIrlButton.addEventListener('click', showSubreddit('meirl'));
+//earthporn subreddit
+const earthButton = document.getElementById('subreddit-three');
+earthButton.addEventListener('click', showSubreddit('earthporn'));
 
 //random subreddit
 const randomButton = document.getElementById('subreddit-four');
@@ -97,14 +98,3 @@ function showRandomSubreddit() {
   getRandom.send();
 }
 
-// function truncate(string, limit, after){
-//   if (!string || !limit) return;
-
-//   let content = string.textBody.innerHTML.trim();
-//   content = content.split(' ').slice(0, limit);
-//   content.join
-
-// }
-
-//TIME STAMP
-//WORD WRAP ISSUES

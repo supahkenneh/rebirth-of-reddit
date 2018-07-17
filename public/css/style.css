@@ -77,9 +77,10 @@ body {
 .picture {
   height: 200px;
   width: 300px;
-  background-size: 320px 250px;
+  background-size: 320px 220px;
   padding: 9px;
-  margin-left: 12px; }
+  margin-left: 12px;
+  margin-top: 12px; }
 
 .title {
   font-family: Oswald, sans-serif;
@@ -90,7 +91,8 @@ body {
   margin-left: 12px;
   overflow: hidden;
   word-wrap: break-word;
-  text-overflow: ellipsis; }
+  text-overflow: ellipsis;
+  margin-top: 5px; }
 
 .stats {
   font-family: Lato, sans-serif;
@@ -159,11 +161,7 @@ body {
     flex-direction: column;
     align-content: center; }
   .picture {
-    height: 200px;
-    width: 300px;
-    background-size: 350px 250px;
-    margin: 5px;
-    margin-top: 10px; }
+    margin: 5px; }
   .title {
     height: 60px;
     width: 320px;
