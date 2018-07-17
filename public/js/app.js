@@ -2,7 +2,7 @@ console.log('test •');
 console.log(moment().format('LLLL'));
 
 //append content here
-let getContentDiv = document.getElementById('body-div');
+let getContentDiv = document.getElementById('body_div');
 
 const randomSubreddits = ['AskReddit', 'Showerthoughts', 'movies', 'OldSchoolCool', 'mildlyinfuriating', 'youseeingthisshit', 'Damnthatsinteresting', 'dadjokes'];
 
@@ -59,7 +59,7 @@ function createPosts() {
     
     //get post text
     let textBody = document.createElement('div');
-    textBody.className = 'text-body';
+    textBody.className = 'text_body';
     textBody.innerHTML = subredditInfo[i].data.selftext;
     postDiv.appendChild(textBody);
 
@@ -96,3 +96,4 @@ function showRandomSubreddit() {
 
 //TIME STAMP
 //DESKTOP VERSION
+//WORD WRAP ISSUES

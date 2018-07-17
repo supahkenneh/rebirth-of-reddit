@@ -1,207 +1,177 @@
-@media (max-width: 375px) {
-  body {
-    background-image: url("https://github.com/supahkenneh/rebirth-of-reddit/blob/master/assets/bg.jpg?raw=true");
-    width: 100%; }
-  #add {
-    position: fixed;
-    top: 0;
-    right: 0;
-    padding: 10px; }
-  .icon {
-    border: solid 1px red; }
-  #main-header {
-    background-color: white;
-    position: fixed;
-    overflow: auto;
-    height: 60px;
-    width: 100%; }
-  #name {
-    top: 0;
-    left: 12px;
-    position: fixed; }
-  #header_logo {
-    display: none; }
-  .subreddits {
-    height: 44px;
-    width: 100%;
-    font-family: Oswald, sans-serif;
-    position: fixed;
-    overflow: auto;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-    background-color: #383838;
-    color: #989898;
-    margin-left: -7px;
-    margin-top: 50px; }
-  .subreddit-class {
-    padding: 10px; }
-  #subreddit-two, #subreddit-three {
-    border: 1px solid gray; }
-  #filler {
-    height: 100px; }
-  .posts {
-    border: solid 0.5px;
-    height: 362px;
-    width: 340px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-content: center;
-    background-color: white; }
-  .picture {
-    height: 200px;
-    width: 350px;
-    background-size: 350px 250px;
-    padding: 10px; }
-  .title {
-    font-family: Oswald, sans-serif;
-    font-size: 24px;
-    height: 40px;
-    width: 340px;
-    padding: -5px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis; }
-  .stats {
-    font-family: Lato, sans-serif;
-    font-size: 12px;
-    height: 10px;
-    width: 340px;
-    margin: 0px;
-    padding: 5px; }
-  .text-body {
-    font-family: Lato, sans-serif;
-    height: 50px;
-    width: 340px;
-    padding: 5px;
-    overflow: hidden;
-    white-space: wrap;
-    text-overflow: ellipsis;
-    font-size: 14px; }
-  .footer {
-    height: 30px;
-    width: 100%;
-    bottom: 100%;
-    background-color: #383838;
-    margin-left: -8px;
-    position: fixed;
-    bottom: 0;
-    text-align: center; }
-  #instagram, #facebook {
-    height: 24px;
-    padding: 2px;
-    padding-top: 2px; } }
+body {
+  background-image: url("https://github.com/supahkenneh/rebirth-of-reddit/blob/master/assets/bg.jpg?raw=true");
+  width: 100%; }
 
-@media (max-width: 2612px) {
-  body {
-    background-image: url("https://github.com/supahkenneh/rebirth-of-reddit/blob/master/assets/bg.jpg?raw=true"); }
+#add {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 10px; }
+
+.icon {
+  border: solid 1px red; }
+
+#main_header {
+  background-color: white;
+  position: fixed;
+  overflow: auto;
+  height: 60px;
+  width: 100%;
+  top: 0;
+  left: 0; }
+
+#name {
+  top: 0;
+  left: 12px;
+  position: fixed; }
+
+.bullet {
+  display: none; }
+
+.header_logo_container {
+  position: fixed;
+  display: flex;
+  height: 60px;
+  width: 100%;
+  justify-content: center; }
+
+#header_logo {
+  display: none; }
+
+.subreddits {
+  height: 45px;
+  width: 100%;
+  font-family: Oswald, sans-serif;
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  background-color: #383838;
+  color: #989898;
+  margin-left: -7px;
+  margin-top: 50px; }
+
+.subreddit-class {
+  padding: 10px; }
+
+#subreddit-two, #subreddit-three {
+  border: 1px solid gray; }
+
+#body_div {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 110px; }
+
+.posts {
+  box-shadow: 0.5px 0.5px 0.5px 0.5px black;
+  height: 362px;
+  width: 340px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: center;
+  background-color: white;
+  margin: 13px; }
+
+.picture {
+  height: 200px;
+  width: 300px;
+  background-size: 320px 250px;
+  padding: 9px;
+  margin-left: 12px; }
+
+.title {
+  font-family: Oswald, sans-serif;
+  font-size: 24px;
+  height: 40px;
+  width: 340px;
+  padding: -5px;
+  margin-left: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+.stats {
+  font-family: Lato, sans-serif;
+  font-size: 12px;
+  height: 10px;
+  width: 340px;
+  margin: 0px;
+  margin-left: 12px; }
+
+.text_body {
+  font-family: Lato, sans-serif;
+  height: 50px;
+  width: 340px;
+  overflow: hidden;
+  white-space: wrap;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  margin-left: 12px; }
+
+.footer {
+  height: 30px;
+  width: 100%;
+  bottom: 100%;
+  background-color: #383838;
+  margin-left: -8px;
+  position: fixed;
+  bottom: 0;
+  text-align: center; }
+
+#instagram, #facebook {
+  height: 24px;
+  padding: 2px;
+  padding-top: 2px; }
+
+@media (min-width: 769px) {
   #add {
-    position: fixed;
-    top: 0;
-    right: 15px;
-    padding: 10px; }
-  .icon {
-    border: solid 1px red; }
-  #main-header {
-    font-family: Oswald, sans-serif;
-    font-size: 30px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    background-color: white;
-    position: fixed;
-    overflow: auto;
-    height: 60px;
-    width: 100%;
-    margin-left: -15px;
-    padding-left: 10px;
-    margin-top: -10px; }
-  .header_logo_container {
+    top: 2px;
+    right: 15px; }
+  #name {
+    left: 47%; }
+  #header_logo {
     display: block;
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    height: 40px;
-    left: 39.6%; }
+    left: 55%; }
   .subreddits {
-    height: 44px;
-    width: 102%;
-    font-family: Oswald, sans-serif;
-    position: fixed;
-    overflow: auto;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-    background-color: #383838;
-    color: #989898;
-    margin-left: -10px;
-    margin-top: 50px; }
-  .subreddit-class {
-    padding: 10px; }
+    flex-flow: row wrap;
+    justify-content: space-evenly; }
   #subreddit-two, #subreddit-three {
-    border: 1px solid gray; }
-  #filler {
-    height: 100px; }
+    border: none; }
+  .bullet {
+    margin-top: 10px;
+    display: block; }
   #body_div {
-    padding: 100px; }
-  .posts {
-    border: solid 0.5px;
-    height: 362px;
-    width: 340px;
-    margin: 9px;
     display: flex;
     flex-flow: row wrap;
-    padding: 8px;
     justify-content: center;
-    background-color: white; }
+    padding-top: 150px;
+    padding-left: 500px;
+    padding-right: 500px; }
+  .posts {
+    height: 400px;
+    width: 330px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-content: center; }
   .picture {
     height: 200px;
-    width: 350px;
+    width: 300px;
     background-size: 350px 250px;
-    padding: 10px; }
+    margin: 5px;
+    margin-top: 10px;
+    border: 0.5px solid; }
   .title {
-    font-family: Oswald, sans-serif;
-    font-size: 24px;
-    height: 40px;
-    width: 340px;
-    padding: -5px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis; }
+    height: 60px;
+    width: 320px;
+    margin-left: 5px; }
   .stats {
-    font-family: Lato, sans-serif;
-    font-size: 12px;
-    height: 10px;
-    width: 340px;
-    margin: 0px;
-    padding: 5px; }
-  .text-body {
-    font-family: Lato, sans-serif;
-    height: 50px;
-    width: 340px;
-    padding: 5px;
-    overflow: hidden;
-    white-space: wrap;
-    text-overflow: ellipsis;
-    font-size: 14px; }
-  .footer {
-    height: 30px;
-    width: 100%;
-    bottom: 100%;
-    background-color: #383838;
-    margin-left: -8px;
-    position: fixed;
-    bottom: 0;
-    text-align: center; }
-  #instagram, #facebook {
-    height: 24px;
-    padding: 2px;
-    padding-top: 2px; } }
+    width: 320px;
+    margin-left: 5px; }
+  .text_body {
+    width: 320px;
+    margin-left: 5px;
+    margin-top: 10px; } }
