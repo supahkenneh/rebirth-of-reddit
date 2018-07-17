@@ -24,7 +24,7 @@ body {
   position: fixed;
   overflow: auto;
   height: 60px;
-  width: 375px;
+  width: 100%;
   margin-left: -15px;
   padding-left: 10px;
   margin-top: -10px;
@@ -32,7 +32,7 @@ body {
 
 .subreddits {
   height: 44px;
-  width: 375px;
+  width: 100%;
   font-family: $oswald;
   position: fixed;
   overflow: auto;
@@ -83,15 +83,12 @@ body {
   height: 200px;
   width: 350px;
   background-size: 350px 250px;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
   padding: 10px;
 }
 
 .title {
   font-family: $oswald;
-  font-size: 16px;
+  font-size: 24px;
   height: 40px;
   width: 340px;
   padding: -5px;
@@ -111,13 +108,30 @@ body {
 
 .text-body {
   font-family: $lato;
-  border: 1px solid;
   height: 50px;
   width: 340px;
   padding: 5px;
   overflow: hidden;
-  white-space: nowrap;
+  white-space: wrap;
   text-overflow: ellipsis;
+  font-size: 14px;
+}
+
+.footer {
+  height: 30px;
+  width: 100%;
+  bottom: 100%;
+  background-color: #383838;
+  margin-left: -8px;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+}
+
+#instagram, #facebook {
+  height: 24px;
+  padding: 2px;
+  padding-top: 2px;
 }
 
 

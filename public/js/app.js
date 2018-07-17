@@ -1,4 +1,5 @@
 console.log('test •');
+console.log(moment().format('LLLL'));
 
 //append content here
 let getContentDiv = document.getElementById('body-div');
@@ -50,7 +51,8 @@ function showCity() {
       //get post stats
       let redditor = document.createElement('p');
       redditor.className = 'stats';
-      redditor.innerHTML = 'by ' + cityPosts[i].data.author + ' • ' + 'Score ' + cityPosts[i].data.score + ' • ' + cityPosts[i].data.num_comments + ' comments';
+      redditor.innerHTML = 'by ' + cityPosts[i].data.author + ' • ' + 'Score ' + cityPosts[i].data.score + ' • ' + 
+      cityPosts[i].data.num_comments + ' comments';
       postDiv.appendChild(redditor);
 
 
@@ -241,9 +243,7 @@ function showRandomSubreddit() {
 
 
 
-//GET RANDOM SUBREDDITS
 //TIME STAMP
 //ADD BUTTON ON TOP RIGHT
-//CREATE FUNCTIONS?
 //DESKTOP VERSION
-//MAKE FOOTER
+//CREATE FUNCTIONS?
